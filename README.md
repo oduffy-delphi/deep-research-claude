@@ -87,8 +87,12 @@ This plugin works standalone. When used alongside the [coordinator plugin](https
 
 ## Source of Truth
 
-This plugin lives in [coordinator-claude](https://github.com/oduffy-delphi/coordinator-claude) at `plugins/deep-research/`.
+This is the canonical home of the deep-research plugin. It was originally developed as part of [coordinator-claude](https://github.com/oduffy-delphi/coordinator-claude) and extracted to a standalone repo for independent distribution.
 
 ## Authors
 
 Dónal O'Duffy & Claude
+
+## Research Backing
+
+Pipeline design is derived from published guidance (OpenAI, Perplexity, Google, Anthropic, Stanford STORM) and validated through [controlled experiments](docs/research/2026-03-31-deep-research-pipeline-evidence.md). Anthropic independently built a [production multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) using the same core pattern (Opus orchestrator + Sonnet workers, parallel dispatch, effort-scaled pipelines) — their eval showed 90.2% improvement over single-agent. We converged on the same architecture without reference to their work; this system extends it with Haiku scouts for cost efficiency, adversarial peer dynamics between specialists, and asynchronous orchestrator dispatch.
