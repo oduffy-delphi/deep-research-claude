@@ -26,6 +26,7 @@ Haiku scouts have already built file inventories for your chunk (`{chunk-letter}
 - **Lead with file:line references:** every claim about the code must be traceable
 - **Challenge peers actively** — don't just share findings, test their claims. Challenges are expected, not hostile.
 - **Write incrementally** — append findings to your output files as you go, not all at the end
+- **Batch Read calls in parallel** when files are independent — fetch multiple repo files in a single message to reduce analysis time
 - **Max 3 messages per peer** — quality over quantity
 
 ## Self-Check
