@@ -63,7 +63,7 @@ Schema-conforming batch research across N entities. Haiku scout maps findings to
 
 Research YouTube videos, podcasts, and media Claude can't access directly, via NotebookLM. Haiku scout ingests sources. Sonnet workers query on focused sub-questions. Opus sweep writes the synthesis.
 
-Requires the [NotebookLM MCP server](notebooklm/.mcp.json) and a Google account with NotebookLM access.
+Requires the [notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) MCP server and a Google account with NotebookLM access.
 
 ```
 /notebooklm-research "topic"
@@ -102,6 +102,10 @@ Pipeline design derives from published guidance (OpenAI, Perplexity, Google, Ant
 ## Source of Truth
 
 This is the canonical home of the deep-research plugin. Originally developed as part of [coordinator-claude](https://github.com/oduffy-delphi/coordinator-claude) and extracted for independent distribution.
+
+## Acknowledgements
+
+Pipeline D is built on [notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) by [jacob-bd](https://github.com/jacob-bd) — an MCP server that provides programmatic access to Google NotebookLM.
 
 ---
 

@@ -5,7 +5,7 @@ Multi-agent deep research pipelines for Claude Code. All pipelines use Agent Tea
 - **Pipeline A (Internet Research)** — investigate a topic across web sources via 1 Haiku scout (source corpus) + 3-5 Sonnet specialists (deep-read + verify) + 1 Opus synthesizer
 - **Pipeline B (Repo Research)** — study a repository's architecture via 2 Haiku scouts (file inventory) → 4 Sonnet specialists (analysis + optional comparison) → 1 Opus synthesizer
 - **Pipeline C (Structured Research, v2.1)** — schema-conforming batch research via 1 Haiku scout + 1-5 Sonnet verifiers (adversarial peer challenges, CONTESTED resolution) + 1 Opus synthesizer (output-first with file-existence gate); outputs YAML/JSON matching the spec's output_schema
-- **Pipeline D (NotebookLM Research)** — media research via NotebookLM for YouTube, podcasts, and content Claude can't access directly; 1 Haiku scout + 1-3 Sonnet workers + 1 Opus sweep; requires the NotebookLM MCP server (scoped to the `notebooklm` sub-plugin — enable before use)
+- **Pipeline D (NotebookLM Research)** — media research via NotebookLM for YouTube, podcasts, and content Claude can't access directly; 1 Haiku scout + 1-3 Sonnet workers + 1 Opus sweep; requires [notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) (scoped to the `notebooklm` sub-plugin — enable before use)
 
 ## Prerequisites
 
