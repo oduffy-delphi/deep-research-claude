@@ -1,0 +1,61 @@
+# Deep-research plugin publish manifest
+# Source: ~/.claude/plugins/coordinator-claude/deep-research/
+# Target: X:/deep-research-claude/
+#
+# Manifest mode: selective copy, no delete. Target has extra files
+# (README.md, LICENSE, docs/) that don't exist in source.
+
+# No SCAN directive — source root IS the plugin dir (no subdirectories to scan).
+# Staleness is caught by the manifest file list itself.
+
+# Config
+CLAUDE.md
+
+# Agent definitions
+agents/repo-scout.md
+agents/repo-specialist.md
+agents/research-scout.md
+agents/research-specialist.md
+agents/research-synthesizer.md
+agents/structured-synthesizer.md
+
+# Commands
+commands/repo.md
+commands/research.md
+commands/structured.md
+commands/web.md
+
+# Pipelines
+pipelines/PIPELINE.md
+pipelines/spec-format.md
+pipelines/eval-rubric.md
+pipelines/gap-specialist-prompt-template.md
+pipelines/repo-atlas-prompt-template.md
+pipelines/repo-scout-prompt-template.md
+pipelines/repo-specialist-prompt-template.md
+pipelines/repo-synthesizer-prompt-template.md
+pipelines/repo-team-protocol.md
+pipelines/scout-prompt-template.md
+pipelines/specialist-prompt-template.md
+pipelines/structured-scout-prompt-template.md
+pipelines/structured-synthesizer-prompt-template.md
+pipelines/structured-team-protocol.md
+pipelines/structured-verifier-prompt-template.md
+pipelines/team-protocol.md
+
+# Skills
+skills/eval-output.md
+
+# NotebookLM (Pipeline D)
+notebooklm/CLAUDE.md
+notebooklm/.claude-plugin/plugin.json
+notebooklm/.mcp.json
+notebooklm/agents/research-scout.md
+notebooklm/agents/research-sweep.md
+notebooklm/agents/research-worker.md
+notebooklm/commands/research.md
+notebooklm/pipelines/team-protocol.md
+notebooklm/pipelines/scout-prompt-template.md
+notebooklm/pipelines/sweep-prompt-template.md
+notebooklm/pipelines/worker-prompt-template.md
+notebooklm/pipelines/notebooklm-best-practices.md

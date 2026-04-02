@@ -28,6 +28,14 @@ Multi-agent deep research pipelines for Claude Code. Three pipelines cover inter
 
 Schema-conforming batch research across N entities. 1 Haiku scout maps findings to schema fields. 1–5 Sonnet verifiers challenge each other's field values and produce schema field tables with change types (CONFIRMED / UPDATED / NEW / REFUTED / CONTESTED). 1 Opus synthesizer writes a skeleton structured file immediately (crash insurance), resolves CONTESTED fields, validates, and overwrites with final YAML/JSON output.
 
+### Pipeline D — NotebookLM Research
+
+Research YouTube videos, podcasts, and media Claude can't access directly, via NotebookLM. 1 Haiku scout sets up the notebook and ingests sources. 1–2 Sonnet workers query the notebook on focused sub-questions. 1 Opus sweep agent reviews coverage, fills gaps, and writes the final synthesis document.
+
+**Prerequisites:** NotebookLM MCP server — configured in the `notebooklm` sub-plugin's `.mcp.json`. Requires a Google account with NotebookLM access.
+
+**Invocation:** `/notebooklm-research <topic>`
+
 ## Prerequisites
 
 - **Claude Code CLI**
@@ -47,6 +55,8 @@ Schema-conforming batch research across N entities. 1 Haiku scout maps findings 
 | **repo-scout** | Haiku | Inventories repo files with function signatures, constants, and data flow |
 | **repo-specialist** | Sonnet | Deep-reads repo chunks, optional project comparison, peer challenges |
 | **structured-synthesizer** | Opus | Output-first skeleton → reconcile → validate → final YAML/JSON (Pipeline C) |
+| **notebooklm-scout** | Haiku | Sets up NotebookLM notebook, ingests sources (Pipeline D) |
+| **notebooklm-worker** | Sonnet | Queries notebook on focused sub-questions, extracts structured claims (Pipeline D) |
 
 ## Commands
 
@@ -56,6 +66,7 @@ Schema-conforming batch research across N entities. 1 Haiku scout maps findings 
 | `/web` | Pipeline A driver — internet research with iterative deepening |
 | `/research` | Alias for `/deep-research` |
 | `/structured` | Pipeline C driver — structured schema-conforming research |
+| `/notebooklm-research` | Pipeline D driver — NotebookLM media research (YouTube, podcasts) |
 
 **Invocation patterns:**
 
