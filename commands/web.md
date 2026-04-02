@@ -64,6 +64,10 @@ Quality gates derived from published guidance (OpenAI, Perplexity, Google, STORM
 - [ ] **Adversarial queries are included.** At least 1 query per topic targeting criticism, limitations, or failure modes. Absence of criticism in sources ≠ absence of real limitations.
 - [ ] **Search queries use varied phrasings.** Different wordings surface different source ecosystems. Include at least one query targeting each of: official docs, practitioner blogs, community forums.
 - [ ] **Cross-cutting themes are named.** Connections between topics are where individual specialists have blind spots — name them so the sweep knows to look.
+- [ ] **Each specialist assignment has: (a) specific objective, (b) output format reference,
+      (c) tool/source guidance, (d) clear task boundaries vs. peers.** Vague assignments
+      ("research X") lead to duplication — be specific about what each specialist SHOULD
+      and SHOULD NOT cover.
 
 ## Step 3 — Create Team and All Tasks
 

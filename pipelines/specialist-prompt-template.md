@@ -66,6 +66,9 @@ Start there — it gives you a head start on discovery.
 
 ### 2. Deep-Read and Verify (top 3-5 sources)
 - Use WebFetch to read the most promising sources in full
+- **Parallel fetching:** When you have multiple sources to deep-read, fetch them
+  in parallel (multiple WebFetch calls in a single message) rather than sequentially.
+  This significantly reduces research time. Group 3-5 fetches per batch.
 - **Verify, don't trust.** Find PRIMARY sources, not just secondary references.
   If Phase 1 flagged a claim, trace it to the original.
 - **Lead with citations:** "According to [Source], [claim]" — NOT "[Claim] ([Source])".
@@ -81,8 +84,17 @@ Start there — it gives you a head start on discovery.
   about your understanding? Did this source confirm, contradict, or add nuance to
   prior sources? Note these reflections — they help synthesis understand which
   sources reinforce vs. challenge the emerging consensus.
+- **Use extended thinking deliberately:** After reading each source, use your thinking
+  to plan your next move: What gaps remain? Which peers need to hear this? Does this
+  change my understanding? This structured reflection improves both reasoning quality
+  and efficiency — Anthropic's production data confirms improved instruction-following
+  and efficiency from thinking-as-scratchpad.
 - **Source quality hierarchy:** Primary docs > Peer-reviewed > Well-maintained OSS >
   Blog (recent) > Forum > AI-generated. Weight findings accordingly.
+- **SEO-suspect sources:** If the scout flagged a source as `SEO-suspect: YES`,
+  treat it with extra scrutiny. Do NOT use it as a primary source — only use it
+  to corroborate claims from higher-quality sources. If it's your only source
+  for a claim, mark confidence as LOW and note the SEO flag.
 - If sources disagree, present BOTH sides with evidence. Do not average
   contradictions into a vague "it depends."
 

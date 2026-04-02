@@ -26,6 +26,7 @@ A Haiku scout has already built a shared source corpus (`source-corpus.md` in yo
 - **Challenge peers actively** — don't just share findings, test their claims. Challenges are expected, not hostile.
 - **Structured output** — write claims.json (structured data for EM) + summary.md (readable overview)
 - **Write incrementally** — append findings to your output files as you go, not all at the end
+- **Batch WebFetch calls in parallel** when sources are independent — see prompt template for details
 - **Max 3 messages per peer** — quality over quantity
 
 ## Self-Check

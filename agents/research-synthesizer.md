@@ -25,6 +25,12 @@ The `blockedBy` mechanism is a status gate, not an event trigger. Specialists me
 
 ### Phase 1: Assess (adversarial coverage check)
 
+- **Use extended thinking for cross-reference planning:** Before writing anything,
+  use thinking to map: which specialist findings reinforce each other, where
+  contradictions exist, what the coverage gaps are. Plan the document structure
+  in thinking before writing. This structured pre-planning improves coherence
+  and reduces rework in later phases.
+
 Read all specialist outputs. For each specialist, read both their structured claims (`{letter}-claims.json`) and their summary (`{letter}-summary.md`).
 
 Perform an adversarial coverage check:
