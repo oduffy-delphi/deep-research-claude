@@ -2,6 +2,14 @@
 
 Multi-agent deep research pipelines for Claude Code. Three pipelines cover internet sources, repository codebases, and schema-conforming structured research — all using Agent Teams with tiered model allocation.
 
+## Use Cases
+
+- Save yourself going to GPT/Perplexity/NotebookLM for quality research to pass back to Claude.
+- Jump-start/boost a project by learning in detail from an open source repo.
+- Free up your top-level Claude by delegating the research to teams.
+- Return reliably-structured results according to a schema.
+- Improved performance on the above than a solo Opus.
+
 ## What It Does
 
 ### Pipeline A — Internet Research (v2.2)
@@ -83,7 +91,7 @@ All pipelines are fire-and-forget — the EM spawns the team and is freed. Resul
 
 ## Integration with coordinator
 
-This plugin works standalone. When used alongside the [coordinator plugin](https://github.com/oduffy-delphi/coordinator-claude), the EM delegates research directly via the commands above. The coordinator's `suggest-sonnet-research` hook (PreToolUse on WebSearch/WebFetch) nudges the EM toward these pipelines instead of ad-hoc direct web calls.
+This plugin works standalone. When used alongside the [coordinator plugin](https://github.com/oduffy-delphi/coordinator-claude), the 'EM' Claude delegates research directly via the commands above. The coordinator's `suggest-sonnet-research` hook (PreToolUse on WebSearch/WebFetch) nudges the top-level Claude toward these pipelines instead of ad-hoc direct web calls.
 
 ## Source of Truth
 

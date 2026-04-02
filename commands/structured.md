@@ -68,16 +68,32 @@ This is judgment work — the EM does it directly:
 8. **Ask the PM for timing preferences:**
    > "Research timing: default is 5-15 min with 5-source minimum per verifier. For a narrow subject, 3-8 min / 3 sources. For a complex subject, 5-20 min / 5 sources. What ceiling works for you?"
 
-### EM Spec Quality Checklist (review before dispatching)
+### EM Spec Quality Self-Score (required before dispatching)
 
-Quality gates for the pre-processed spec — review before creating the team:
+Before creating the team, score the spec against the 6 items below and write the result to `{scratch-dir}/spec-score.md`. **This file must exist before Step 3 begins** — it is a hard gate, not advisory. The score is run metadata and will be archived with the paper trail.
 
-- [ ] **Schema fields are unambiguous.** Each field in `output_schema` has a clear type, allowed values (for enums), and enough context that a verifier can determine the correct value from a source. Vague fields like "status" without enum values will produce inconsistent results.
-- [ ] **Acceptance criteria are falsifiable.** Each criterion has a concrete pass/fail condition — not "good coverage" but "minimum 3 sources per topic, at least 1 in native language."
-- [ ] **Topics map cleanly to schema fields.** Every required schema field is assigned to exactly one topic. Unassigned fields produce gaps; multiply-assigned fields produce conflicts. Check the mapping in scout-brief.md before dispatch.
-- [ ] **Existing data is loaded for comparison.** The per-subject source file was read and its content will be passed to verifiers. Without this, verifiers can't assign change types (CONFIRMED/UPDATED/NEW/REFUTED) — everything becomes NEW.
-- [ ] **Gate rules are extractable.** The spec's quality gates can be flattened into verifier-embeddable rules. Complex nested gates need simplification before embedding.
-- [ ] **Adversarial search terms are included.** Scout brief includes at least one adversarial query per topic. Absence of negative findings ≠ absence of real issues.
+Score each item pass (`[x]`) or fail (`[ ]`) and write this block to `{scratch-dir}/spec-score.md`:
+
+```markdown
+## Spec Quality Score
+- [ ] Schema provided with field descriptions
+- [ ] Acceptance criteria per field
+- [ ] Scout search queries specified
+- [ ] Verifier topic assignments clear
+- [ ] Output path and format specified
+- [ ] Subjects list complete
+Score: N/6
+```
+
+A score below 5/6 requires PM alignment before proceeding — flag which items failed and why.
+
+**Scoring criteria:**
+- **Schema provided with field descriptions** — each field in `output_schema` has a clear type, allowed values (for enums), and enough context that a verifier can determine the correct value from a source
+- **Acceptance criteria per field** — each criterion has a concrete pass/fail condition (not "good coverage" but "minimum 3 sources per topic")
+- **Scout search queries specified** — spec or scout-brief.md includes explicit search queries per topic, not just topic names; includes at least one adversarial query per topic
+- **Verifier topic assignments clear** — every required schema field is assigned to exactly one topic; no unassigned fields, no multiply-assigned fields
+- **Output path and format specified** — spec defines the output file path and format (YAML/JSON) for this subject
+- **Subjects list complete** — the subjects list in the spec is finalized; no placeholder or TBD entries
 
 ## Step 3 — Create Team and All Tasks
 
@@ -185,6 +201,7 @@ After spawning all teammates, announce:
 When you receive a notification that the synthesis task is complete:
 
 1. **File-existence gate (HARD GATE):** Check whether the structured data file exists at `{output-path}`:
+   <!-- NOTE: The synthesizer writes a schema-invalid skeleton immediately for crash insurance, then overwrites with the final valid output. This gate checks file-existence only — NOT schema validity. Schema validation during the synthesis window would cause false failures. The synthesizer's output-first pattern is documented in docs/superpowers/specs/2026-04-01-pipeline-c-v21-upgrade-design.md. -->
    - If **missing**: schema validation FAILED. Do NOT archive. Keep team alive.
      Send correction message to synthesizer via `SendMessage`:
      > "OUTPUT FILE MISSING: Expected structured data at {output-path}. You must write schema-conforming YAML/JSON to this path. Your annotations at synthesis-annotations.md are supplementary — the structured data file IS the deliverable."
